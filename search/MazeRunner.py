@@ -1,4 +1,4 @@
-# Runman.py
+# MazeRunner.py
 # ---------
 # Licensing Information:  You are free to use or extend these projects for
 # educational purposes provided that (1) you do not distribute or publish
@@ -36,7 +36,7 @@ code to run a game.  This file is divided into three sections:
           linking in all the external parts (agent functions, graphics).
           Check this section out to see all the options available to you.
 
-To play your first game, type 'python Runman.py' from the command line.
+To play your first game, type 'python MazeRunner.py' from the command line.
 The keys are 'a', 's', 'd', and 'w' to move (or arrow keys).  Have fun!
 """
 from game import GameStateData
@@ -479,11 +479,11 @@ def readCommand( argv ):
     """
     from optparse import OptionParser
     usageStr = """
-    USAGE:      python Runman.py <options>
-    EXAMPLES:   (1) python Runman.py
+    USAGE:      python MazeRunner.py <options>
+    EXAMPLES:   (1) python MazeRunner.py
                     - starts an interactive game
-                (2) python Runman.py --layout smallClassic --zoom 2
-                OR  python Runman.py -l smallClassic -z 2
+                (2) python MazeRunner.py --layout smallClassic --zoom 2
+                OR  python MazeRunner.py -l smallClassic -z 2
                     - starts an interactive game on a smaller board, zoomed in
     """
     parser = OptionParser(usageStr)
@@ -667,14 +667,14 @@ def runGames( layout, pacman, ghosts, display, numGames, record, numTraining = 0
 
 if __name__ == '__main__':
     """
-    The main function called when Runman.py is run
+    The main function called when MazeRunner.py is run
     from the command line:
 
-    > python Runman.py
+    > python MazeRunner.py
 
     See the usage string for more details.
 
-    > python Runman.py --help
+    > python MazeRunner.py --help
     """
     args = readCommand( sys.argv[1:] ) # Get game components based on input
     runGames( **args )
