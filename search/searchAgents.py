@@ -14,11 +14,11 @@
 
 """
 This file contains all of the agents that can be selected to control Pacman.  To
-select an agent, use the '-p' option when running pacman.py.  Arguments can be
+select an agent, use the '-p' option when running Runman.py.  Arguments can be
 passed to your agent using '-a'.  For example, to load a SearchAgent that uses
 depth first search (dfs), run the following command:
 
-> python pacman.py -p SearchAgent -a fn=depthFirstSearch
+> python Runman.py -p SearchAgent -a fn=depthFirstSearch
 
 Commands to invoke other search strategies can be found in the project
 description.
@@ -37,7 +37,7 @@ Good luck and happy searching!
 from game import Directions
 from game import Agent
 from game import Actions
-import pacman
+import Runman
 import util
 import time
 import search
@@ -47,7 +47,7 @@ class GoWestAgent(Agent):
     "An agent that goes West until it can't."
 
     def getAction(self, state):
-        "The agent receives a GameState (defined in pacman.py)."
+        "The agent receives a GameState (defined in Runman.py)."
         if Directions.WEST in state.getLegalPacmanActions():
             return Directions.WEST
         else:
@@ -109,7 +109,7 @@ class SearchAgent(Agent):
         should compute the path to the goal and store it in a local variable.
         All of the work is done in this method!
 
-        state: a GameState object (pacman.py)
+        state: a GameState object (Runman.py)
         """
         if self.searchFunction == None: raise Exception, "No search function provided for SearchAgent"
         starttime = time.time()
@@ -125,7 +125,7 @@ class SearchAgent(Agent):
         registerInitialState).  Return Directions.STOP if there is no further
         action to take.
 
-        state: a GameState object (pacman.py)
+        state: a GameState object (Runman.py)
         """
         if 'actionIndex' not in dir(self): self.actionIndex = 0
         i = self.actionIndex
@@ -150,7 +150,7 @@ class PositionSearchProblem(search.SearchProblem):
         """
         Stores the start and goal.
 
-        gameState: A GameState object (pacman.py)
+        gameState: A GameState object (Runman.py)
         costFn: A function from a search state (tuple) to a non-negative number
         goal: A position in the gameState
         """

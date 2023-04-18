@@ -18,6 +18,7 @@ from game import Directions
 import random
 from util import manhattanDistance
 import util
+import search
 
 class GhostAgent( Agent ):
     def __init__( self, index ):
@@ -62,7 +63,7 @@ class DirectionalGhost( GhostAgent ):
         actionVectors = [Actions.directionToVector( a, speed ) for a in legalActions]
         newPositions = [( pos[0]+a[0], pos[1]+a[1] ) for a in actionVectors]
         pacmanPosition = state.getPacmanPosition()
-
+        direction = [search.aStarSearch(state, heuristic=manhattanDistance( pos, pacmanPosition )) for pos in newPositions]
         # Select best actions given the state
         distancesToPacman = [manhattanDistance( pos, pacmanPosition ) for pos in newPositions]
         if isScared:
