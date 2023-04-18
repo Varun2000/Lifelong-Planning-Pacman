@@ -545,7 +545,7 @@ class PacmanGraphics:
             foodImages.append(imageRow)
             for yNum, cell in enumerate(x):
                 if cell: # There's food here
-                    screen = self.to_screen((xNum, yNum ))
+                    (screen_x, screen_y) = self.to_screen((xNum, yNum ))
                     # dot = circle( screen,
                     #               FOOD_SIZE * self.gridSize,
                     #               outlineColor = color, fillColor = color,
@@ -553,7 +553,7 @@ class PacmanGraphics:
                     coords = []
                     for (x, y) in FOOD_SHAPE:
                         coords.append(
-                            (x * self.gridSize * FOOD_SIZE + xNum, y * self.gridSize * FOOD_SIZE + yNum))
+                            (x * self.gridSize * FOOD_SIZE + screen_x, y * self.gridSize * FOOD_SIZE + screen_y))
 
                     body = polygon(coords, color, filled=1)
                     imageRow.append(body)
