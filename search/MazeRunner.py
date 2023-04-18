@@ -497,7 +497,7 @@ def readCommand( argv ):
                       help=default('the agent TYPE in the pacmanAgents module to use'),
                       metavar='TYPE', default='KeyboardAgent')
     parser.add_option('-t', '--textGraphics', action='store_true', dest='textGraphics',
-                      help='Display output as text only', default=True)
+                      help='Display output as text only', default=False)
     parser.add_option('-q', '--quietTextGraphics', action='store_true', dest='quietGraphics',
                       help='Generate minimal output and no graphics', default=False)
     parser.add_option('-g', '--ghosts', dest='ghost',
