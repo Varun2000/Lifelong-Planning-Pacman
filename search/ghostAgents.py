@@ -45,7 +45,7 @@ class RandomGhost( GhostAgent ):
 
 class DirectionalGhost( GhostAgent ):
     "A ghost that prefers to rush Pacman, or flee when scared."
-    def __init__( self, index, prob_attack=0.8, prob_scaredFlee=0.8 ):
+    def __init__( self, index, prob_attack=0.9, prob_scaredFlee=0 ):
         self.index = index
         self.prob_attack = prob_attack
         self.prob_scaredFlee = prob_scaredFlee
@@ -63,7 +63,7 @@ class DirectionalGhost( GhostAgent ):
         actionVectors = [Actions.directionToVector( a, speed ) for a in legalActions]
         newPositions = [( pos[0]+a[0], pos[1]+a[1] ) for a in actionVectors]
         pacmanPosition = state.getPacmanPosition()
-        direction = [search.aStarSearch(state, heuristic=manhattanDistance( pos, pacmanPosition )) for pos in newPositions]
+        #direction = [search.aStarSearch(state, heuristic=manhattanDistance( pos, pacmanPosition )) for pos in newPositions]
         # Select best actions given the state
         distancesToPacman = [manhattanDistance( pos, pacmanPosition ) for pos in newPositions]
         if isScared:
