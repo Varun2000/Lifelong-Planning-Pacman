@@ -65,8 +65,22 @@ PACMAN_SCALE = 0.5
 #pacman_speed = 0.25
 
 # Food
-FOOD_COLOR = formatColor(1,1,1)
-FOOD_SIZE = 0.1
+FOOD_COLOR = formatColor(.9,0,0)
+FOOD_SIZE = 0.65
+FOOD_SHAPE = [
+    ( 0,    0.3 ),
+    ( 0.25, 0.75 ),
+    ( 0.5,  0.3 ),
+    ( 0.75, 0.75 ),
+    ( 0.75, -0.5 ),
+    ( 0.5,  -0.75 ),
+    (-0.5,  -0.75 ),
+    (-0.75, -0.5 ),
+    (-0.75, 0.75 ),
+    (-0.5,  0.3 ),
+    (-0.25, 0.75 )
+  ]
+
 
 # Laser
 LASER_COLOR = formatColor(1,0,0)
@@ -119,7 +133,7 @@ class InfoPane:
             self.ghostDistanceText.append(t)
 
     def updateScore(self, score):
-        changeText(self.scoreText, "SCORE: % 4d" % score)
+        changeText(self.scoreText, "SCORE: % 4d" % -score)
 
     def setTeam(self, isBlue):
         text = "RED TEAM"
@@ -262,7 +276,7 @@ class PacmanGraphics:
         begin_graphics(screen_width,
                        screen_height,
                        BACKGROUND_COLOR,
-                       "CS188 Pacman")
+                       "Maze Runner")
 
     def drawPacman(self, pacman, index):
         position = self.getPosition(pacman)
@@ -532,11 +546,17 @@ class PacmanGraphics:
             for yNum, cell in enumerate(x):
                 if cell: # There's food here
                     screen = self.to_screen((xNum, yNum ))
-                    dot = circle( screen,
-                                  FOOD_SIZE * self.gridSize,
-                                  outlineColor = color, fillColor = color,
-                                  width = 1)
-                    imageRow.append(dot)
+                    # dot = circle( screen,
+                    #               FOOD_SIZE * self.gridSize,
+                    #               outlineColor = color, fillColor = color,
+                    #               width = 1)
+                    coords = []
+                    for (x, y) in FOOD_SHAPE:
+                        coords.append(
+                            (x * self.gridSize * FOOD_SIZE + xNum, y * self.gridSize * FOOD_SIZE + yNum))
+
+                    body = polygon(coords, color, filled=1)
+                    imageRow.append(body)
                 else:
                     imageRow.append(None)
         return foodImages
