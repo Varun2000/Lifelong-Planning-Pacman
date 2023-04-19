@@ -276,7 +276,7 @@ class PacmanGraphics:
         begin_graphics(screen_width,
                        screen_height,
                        BACKGROUND_COLOR,
-                       "Maze Runner")
+                       "Human-Like Pursuit")
 
     def drawPacman(self, pacman, index):
         position = self.getPosition(pacman)
