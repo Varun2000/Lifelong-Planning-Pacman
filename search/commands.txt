@@ -1,11 +1,11 @@
-python MazeRunner.py
-python MazeRunner.py -h
-python MazeRunner.py -l mediumMaze -p SearchAgent
-python MazeRunner.py -l bigMaze -z .5 -p SearchAgent
-python MazeRunner.py -l mediumMaze -p SearchAgent -a fn=bfs
-python MazeRunner.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
-python MazeRunner.py -l mediumMaze -p SearchAgent -a fn=ucs
+python Pursuit.py
+python Pursuit.py -h
+python Pursuit.py -l mediumMaze -p SearchAgent
+python Pursuit.py -l bigMaze -z .5 -p SearchAgent
+python Pursuit.py -l mediumMaze -p SearchAgent -a fn=bfs
+python Pursuit.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+python Pursuit.py -l mediumMaze -p SearchAgent -a fn=ucs
 
-python MazeRunner.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic 
-python MazeRunner.py -l bigMaze -z .5 -p SearchAgent -a fn=abase,heuristic=manhattanHeuristic
-python MazeRunner.py -l bigMaze -z .5 -p SearchAgent -a fn=dstar,heuristic=manhattanHeuristic
+python Pursuit.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic 
+python Pursuit.py -l bigMaze -z .5 -p SearchAgent -a fn=abase,heuristic=manhattanHeuristic
+python Pursuit.py -l bigMaze -z .5 -p SearchAgent -a fn=dstar,heuristic=manhattanHeuristic

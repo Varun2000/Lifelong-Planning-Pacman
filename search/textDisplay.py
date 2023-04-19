@@ -14,7 +14,7 @@
 
 import time
 try: 
-    import MazeRunner
+    import Pursuit
 except:
     pass
 

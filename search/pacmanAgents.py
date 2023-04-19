@@ -12,7 +12,7 @@
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
 
 
-from MazeRunner import Directions
+from Pursuit import Directions
 from game import Agent
 import random
 import game
