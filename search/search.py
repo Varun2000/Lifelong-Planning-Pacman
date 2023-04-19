@@ -488,9 +488,9 @@ def dStarSearch(problem, heuristic=nullHeuristic):
 bfs = breadthFirstSearch
 dfs = depthFirstSearch
 #use this abbrevation to run life long A algorithm
-astar = aStarSearch
+astar = aStarBase
 #use this abbrevation to run A* baseline algorithm
-abase = aStarBase
+abase = aStarSearch
 ucs = uniformCostSearch
 #use this abbrevation to run d* lite algorithm
 dstar = dStarSearch
